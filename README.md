@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # Quant Signal Platform
 
 End-to-end long-short equity strategy platform built on 30 S&P 500 stocks.
@@ -30,8 +29,3 @@ PYTHONPATH=. python ingestion/fetch_market_data.py
 PYTHONPATH=. python signals/technical.py
 PYTHONPATH=. streamlit run api/dashboard.py
 ```
-EOF
-
-git add README.md
-git commit -m "docs: add README with architecture and backtest results"
-git push
