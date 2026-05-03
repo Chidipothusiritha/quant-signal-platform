@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: quant_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: quant
+      POSTGRES_PASSWORD: quantpass
+      POSTGRES_DB: quant_platform
+    ports:
+      - "5432:5432"
+    volumes:
+      - quant_pgdata:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+ 
+volumes:
+  quant_pgdata:
+ 
